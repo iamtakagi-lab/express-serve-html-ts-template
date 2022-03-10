@@ -1,9 +1,10 @@
-const path = require("path")
-const nodeExternals = require("webpack-node-externals");
-const isProduction = process.env.NODE_ENV === "production"
+import * as path from 'path';
+import * as webpack from 'webpack';
+import nodeExternals from 'webpack-node-externals';
 
-/** @type {import("webpack").Configuration} */
-const webConfig = {
+const isProduction = process.env.NODE_ENV === "production";
+
+const webConfig: webpack.Configuration = {
     mode: isProduction ? "production" : "development",
     entry: {
         script: "./src/script.ts",
@@ -27,7 +28,7 @@ const webConfig = {
     }
 }
 
-const serverConfig = {
+const serverConfig: webpack.Configuration = {
     mode: isProduction ? "production" : "development",
     entry: {
         main: "./server/index.ts",
