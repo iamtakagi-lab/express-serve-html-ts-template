@@ -31,7 +31,7 @@ const webConfig: webpack.Configuration = {
 const serverConfig: webpack.Configuration = {
     mode: isProduction ? "production" : "development",
     entry: {
-        main: "./server/index.ts",
+        main: "./src/index.ts",
     },
     target: 'node',
     externals: [nodeExternals()],
